@@ -5,8 +5,16 @@ $colour-white: #fff;
 $colour-black: black;
 $colour-invalid: #db464b;
 $dark-grey: #b2b2b2;
+$light-grey: #eaeaea;
 
 $heading-shadow-size: 0.55rem;
-$layout-margin: 6rem;
+$layout-margin: 2rem;
+$padding-margin: 4rem 0rem;
 $grid-gutter: $layout-margin * 0.25;
 $margin-global: 1rem;
+$badge-width-height: 30px;
+
+//Font size
+$h1-font-size: 2.5rem;
+$p-font-size: 1.8rem;
+$btn-font-size: 1rem;

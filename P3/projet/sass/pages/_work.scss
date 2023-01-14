@@ -1,0 +1,83 @@
+.description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: $light-grey;
+  max-width: 100%;
+  padding: $padding-margin;
+  > h1 {
+    font-size: $h1-font-size;
+    margin-bottom: $layout-margin;
+  }
+  > p {
+    font-size: $p-font-size;
+    margin-bottom: $layout-margin;
+  }
+  > button {
+    width: fit-content;
+    background-color: $colour-primary;
+    border-radius: 50px;
+    border-style: none;
+    > p {
+      font-size: $p-font-size;
+      padding: 1rem 2rem;
+      color: $colour-white;
+    }
+  }
+}
+
+.features {
+  .steps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .step {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: $margin-global;
+    font-size: $p-font-size;
+    border-radius: 50px;
+    border-style: none;
+
+    background-color: $light-grey;
+    &__description {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 100%;
+      padding-top: $margin-global;
+      padding-bottom: $margin-global;
+    }
+    &__number {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $colour-primary;
+      width: $badge-width-height;
+      height: $badge-width-height;
+      border-radius: $badge-width-height;
+      font-size: $p-font-size;
+      right: 3%;
+      color: $colour-white;
+      text-align: center;
+    }
+  }
+}
+
+.restaurants {
+  background-color: $light-grey;
+
+  &__card {
+    padding: $layout-margin;
+    > img {
+      object-fit: contain;
+      width: 100%;
+    }
+  }
+}
