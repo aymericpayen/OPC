@@ -41,17 +41,24 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  max-width: 100%;
+}
+.header > h1 {
+  font-size: 2rem;
 }
 .header__localization {
   display: flex;
   justify-content: center;
-  align-items: baseline;
+  align-items: center;
   width: 100%;
   background-color: #b2b2b2;
+  padding: 1rem 0rem;
 }
 .header__localization i {
   margin-right: 1rem;
+}
+.header__localization span {
+  font-size: 1.2rem;
 }
 
 .form {
@@ -97,34 +104,46 @@ button {
 }
 
 .description {
+  padding: 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   background-color: #eaeaea;
   max-width: 100%;
-  padding: 4rem 0rem;
+  padding: 3rem 0rem;
 }
 .description > h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 2rem;
 }
-.description > p {
-  font-size: 1.8rem;
+.description > span {
+  font-size: 1.2rem;
   margin-bottom: 2rem;
 }
 .description > button {
+  display: flex;
+  justify-content: center;
   width: fit-content;
   background-color: #9356dc;
-  border-radius: 50px;
+  border-radius: 3rem;
   border-style: none;
-}
-.description > button > p {
-  font-size: 1.8rem;
   padding: 1rem 2rem;
+}
+.description > button > span {
+  font-size: 1.2rem;
   color: #fff;
 }
+.description > h2 {
+  font-size: 1.5rem;
+}
 
+.features {
+  padding: 0.5rem;
+}
+.features > h2 {
+  font-size: 1.5rem;
+}
 .features .steps {
   display: flex;
   flex-direction: column;
@@ -137,8 +156,8 @@ button {
   align-items: center;
   width: 90%;
   margin: 1rem;
-  font-size: 1.8rem;
-  border-radius: 50px;
+  font-size: 1.3rem;
+  border-radius: 3rem;
   border-style: none;
   background-color: #eaeaea;
 }
@@ -156,25 +175,74 @@ button {
   justify-content: center;
   align-items: center;
   background-color: #9356dc;
-  width: 30px;
-  height: 30px;
-  border-radius: 30px;
-  font-size: 1.8rem;
-  right: 3%;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 2rem;
+  font-size: 1.3rem;
+  right: 0.9rem;
   color: #fff;
   text-align: center;
 }
 
 .restaurants {
+  padding: 0.5rem;
   background-color: #eaeaea;
+}
+.restaurants > h2 {
+  font-size: 1.5rem;
+}
+
+.restaurants-cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1rem;
 }
 
 .restaurants-card {
-  padding: 2rem;
+  max-width: 20rem;
+  border-style: none;
+  border-radius: 1rem;
+  background-color: #fff;
 }
-.restaurants-card > img {
+.restaurants-card__image {
+  border-radius: inherit;
+  object-fit: contain;
+  position: relative;
+}
+.restaurants-card__image > img {
+  border-radius: inherit;
+  display: block;
   object-fit: contain;
   width: 100%;
+}
+.restaurants-card__image > span {
+  position: absolute;
+  display: block;
+  top: 1rem;
+  right: 0.75rem;
+  border-style: none;
+  border-radius: 10px;
+  background: #99e2d0;
+  padding: 0.2rem;
+  color: #1b6150;
+  font-size: 1rem;
+}
+.restaurants-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+}
+.restaurants-card__text > h3 {
+  font-size: 1.3rem;
+}
+.restaurants-card__text > span {
+  font-size: 1.2rem;
+}
+.restaurants-card__icon > .fas {
+  color: #9356dc;
 }
 
 /*# sourceMappingURL=style.css.map */

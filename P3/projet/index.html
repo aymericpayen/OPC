@@ -21,20 +21,20 @@
       <h1>OhMyFood</h1>
       <div class="header__localization">
         <i class="fas fa-map-marker-alt"></i>
-        <p class="textarea"><strong>Paris, Belleville</strong></p>
+        <span><strong>Paris, Belleville</strong></span>
       </div>
     </header>
 
     <main class="container">
       <section class="description">
-        <p><strong>Réservez le menu qui vous convient</strong></p>
-        <p>Découvrez des restaurant d'exception, sélectionnés par nos soins</p>
+        <h2><strong>Réservez le menu qui <br>vous convient</br></strong></h2>
+        <span>Découvrez des restaurant d'exception, sélectionnés par nos soins</span>
         <button>
-          <p>Explorez nos restaurants</p>
+          <span>Explorez nos restaurants</span>
         </button>
       </section>
       <section class="features">
-        <p><strong>Fonctionnement</strong></p>
+        <h2><strong>Fonctionnement</strong></h2>
         <div class="steps">
           <div class="step">
             <div class="step__number">
@@ -66,14 +66,45 @@
         </div>
       </section>
       <section class="restaurants">
-        <p><strong>Restaurants</strong></p>
+        <h2><strong>Restaurants</strong></h2>
         <div class="restaurants-cards">
           <div class="restaurants-card">
-            <img
-              src="./public/img/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
-              alt=""
-            />
-            <div class="restaurants-card__description"></div>
+            <div class="restaurants-card__image">
+              <img
+                src="./public/img/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
+                alt=""
+              />
+              <span>Nouveau</span>
+            </div>
+            <div class="restaurants-card__footer">
+              <div class="restaurants-card__text">
+                <h3><strong>La palette du goût</strong></h3>
+                <span>Ménilmontant</span>
+              </div>
+              <div class="restaurants-card__icon">
+                <i class="far fa-heart"></i>
+                <i class="fas fa-heart"></i>
+              </div>
+            </div>
+          </div>
+          <div class="restaurants-card">
+            <div class="restaurants-card__image">
+              <img
+                src="./public/img/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
+                alt=""
+              />
+              <span>Nouveau</span>
+            </div>
+            <div class="restaurants-card__footer">
+              <div class="restaurants-card__text">
+                <h3><strong>La note enchantée</strong></h3>
+                <span>Charonne</span>
+              </div>
+              <div class="restaurants-card__icon">
+                <i class="far fa-heart"></i>
+                <i class="fas fa-heart"></i>
+              </div>
+            </div>
           </div>
         </div>
       </section>

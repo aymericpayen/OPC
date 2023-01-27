@@ -1,6 +1,6 @@
 $colour-primary: #9356dc;
 $colour-secondary: #ff79da;
-$colour-ternary: #99e2d0;
+$colour-tertiary: #99e2d0;
 $colour-white: #fff;
 $colour-black: black;
 $colour-invalid: #db464b;
@@ -8,13 +8,31 @@ $dark-grey: #b2b2b2;
 $light-grey: #eaeaea;
 
 $heading-shadow-size: 0.55rem;
+//Margin
 $layout-margin: 2rem;
-$padding-margin: 4rem 0rem;
 $grid-gutter: $layout-margin * 0.25;
 $margin-global: 1rem;
-$badge-width-height: 30px;
+$badge-width-height: 2rem;
+
+//padding
+$padding-top-bottom-section: 3rem 0rem;
+$padding-localization: 1rem 0rem;
+$padding-button: 1rem 2rem;
+$padding-card-content: 0.5rem;
+$padding-section: 0.5rem;
 
 //Font size
-$h1-font-size: 2.5rem;
-$p-font-size: 1.8rem;
+$h1-font-size: 2rem;
+$h2-font-size: 1.5rem;
+$h3-font-size: 1.3rem;
+$p-font-size: 1.3rem;
 $btn-font-size: 1rem;
+$span-font-size: 1.2rem;
+
+//Border radius
+$boarder-radius-button: 3rem;
+$border-radius-step: 3rem;
+$border-radius-card: 1rem;
+
+//Width
+$max-width-restaurant-card: 20rem;

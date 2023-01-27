@@ -11,7 +11,7 @@
   }
   &__field {
     & label {
-      color: $colour-ternary;
+      color: $colour-tertiary;
       display: block;
       font-size: 2rem;
       line-height: 2rem;
@@ -22,7 +22,7 @@
       background: $colour-secondary;
       @include border;
       padding: $grid-gutter;
-      color: $colour-ternary;
+      color: $colour-tertiary;
       font-weight: 900;
       font-style: italic;
       font-size: 2.75rem;

@@ -1,33 +1,43 @@
 .description {
+  padding: $padding-section;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   background-color: $light-grey;
   max-width: 100%;
-  padding: $padding-margin;
+  padding: $padding-top-bottom-section;
   > h1 {
     font-size: $h1-font-size;
     margin-bottom: $layout-margin;
   }
-  > p {
-    font-size: $p-font-size;
+  > span {
+    font-size: $span-font-size;
     margin-bottom: $layout-margin;
   }
   > button {
+    display: flex;
+    justify-content: center;
     width: fit-content;
     background-color: $colour-primary;
-    border-radius: 50px;
+    border-radius: $boarder-radius-button;
     border-style: none;
-    > p {
-      font-size: $p-font-size;
-      padding: 1rem 2rem;
+    padding: $padding-button;
+    > span {
+      font-size: $span-font-size;
       color: $colour-white;
     }
+  }
+  > h2 {
+    font-size: $h2-font-size;
   }
 }
 
 .features {
+  padding: $padding-section;
+  > h2 {
+    font-size: $h2-font-size;
+  }
   .steps {
     display: flex;
     flex-direction: column;
@@ -41,7 +51,7 @@
     width: 90%;
     margin: $margin-global;
     font-size: $p-font-size;
-    border-radius: 50px;
+    border-radius: $border-radius-step;
     border-style: none;
 
     background-color: $light-grey;
@@ -63,7 +73,7 @@
       height: $badge-width-height;
       border-radius: $badge-width-height;
       font-size: $p-font-size;
-      right: 3%;
+      right: 0.9rem;
       color: $colour-white;
       text-align: center;
     }
@@ -71,13 +81,67 @@
 }
 
 .restaurants {
+  padding: $padding-section;
   background-color: $light-grey;
+  > h2 {
+    font-size: $h2-font-size;
+  }
 }
 
+.restaurants-cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: $margin-global;
+}
 .restaurants-card {
-  padding: $layout-margin;
-  > img {
+  max-width: $max-width-restaurant-card;
+  border-style: none;
+  border-radius: $border-radius-card;
+  background-color: $colour-white;
+
+  &__image {
+    border-radius: inherit;
     object-fit: contain;
-    width: 100%;
+    position: relative;
+    > img {
+      border-radius: inherit;
+      display: block;
+      object-fit: contain;
+      width: 100%;
+    }
+    > span {
+      position: absolute;
+      display: block;
+      top: 1rem;
+      right: 0.75rem;
+      border-style: none;
+      border-radius: 10px;
+      background: $colour-tertiary;
+      padding: 0.2rem;
+      color: darken($colour-tertiary, 50%);
+      font-size: 1rem;
+    }
+  }
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $padding-card-content;
+  }
+  &__text {
+    > h3 {
+      font-size: $h3-font-size;
+    }
+    > span {
+      font-size: $span-font-size;
+    }
+  }
+
+  &__icon {
+    > .fas {
+      color: $colour-primary;
+    }
   }
 }

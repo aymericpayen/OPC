@@ -2,16 +2,24 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  max-width: 100%;
+  > h1 {
+    font-size: $h1-font-size;
+  }
 
   &__localization {
     display: flex;
     justify-content: center;
-    align-items: baseline;
+    align-items: center;
     width: 100%;
     background-color: $dark-grey;
+    padding: $padding-localization;
+
     i {
       margin-right: $margin-global;
+    }
+    span {
+      font-size: $span-font-size;
     }
   }
 }
