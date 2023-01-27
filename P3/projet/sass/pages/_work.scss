@@ -72,12 +72,12 @@
 
 .restaurants {
   background-color: $light-grey;
+}
 
-  &__card {
-    padding: $layout-margin;
-    > img {
-      object-fit: contain;
-      width: 100%;
-    }
+.restaurants-card {
+  padding: $layout-margin;
+  > img {
+    object-fit: contain;
+    width: 100%;
   }
 }

@@ -168,10 +168,11 @@ button {
 .restaurants {
   background-color: #eaeaea;
 }
-.restaurants__card {
+
+.restaurants-card {
   padding: 2rem;
 }
-.restaurants__card > img {
+.restaurants-card > img {
   object-fit: contain;
   width: 100%;
 }
