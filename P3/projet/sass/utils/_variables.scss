@@ -6,12 +6,14 @@ $colour-black: black;
 $colour-invalid: #db464b;
 $dark-grey: #b2b2b2;
 $light-grey: #eaeaea;
+$dark-grey-footer: #353535;
 
 $heading-shadow-size: 0.55rem;
 //Margin
 $layout-margin: 2rem;
 $grid-gutter: $layout-margin * 0.25;
 $margin-global: 1rem;
+$margin-global-half: 0.5rem;
 $badge-width-height: 2rem;
 
 //padding
@@ -30,9 +32,10 @@ $btn-font-size: 1rem;
 $span-font-size: 1.2rem;
 
 //Border radius
-$boarder-radius-button: 3rem;
+$border-radius-button: 3rem;
 $border-radius-step: 3rem;
 $border-radius-card: 1rem;
 
 //Width
-$max-width-restaurant-card: 20rem;
+$max-width-restaurant-card: 24rem;
+$max-heigth-restaurant-card: 37rem;

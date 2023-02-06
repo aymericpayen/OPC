@@ -61,46 +61,32 @@ button {
   font-size: 1.2rem;
 }
 
-.form {
-  width: 100%;
-  padding-bottom: 0.5rem;
+footer {
+  background-color: #353535;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
 }
-.form__heading {
-  width: 100%;
+
+.footer__logo {
+  color: white;
+  font-family: "Shrikhand", sans-serif;
+  font-size: 1.2rem;
+}
+.footer__list {
+  margin: 0;
+}
+.footer__listElement {
+  display: flex;
+  padding: 0 0.5rem;
+}
+.footer__link {
   color: #fff;
-  text-shadow: 0.55rem 0.55rem #782cd3;
-  background: #9356dc;
-  line-height: 5rem;
-  padding: 0.5rem;
+  text-decoration: none;
+  font-size: 1.2rem;
 }
-.form__field label {
-  color: #99e2d0;
-  display: block;
-  font-size: 2rem;
-  line-height: 2rem;
-  padding-top: 0.5rem;
-}
-.form__field input {
-  width: 100%;
-  background: #ff79da;
-  border: 0.1rem solid #9356dc;
-  padding: 0.5rem;
-  color: #99e2d0;
-  font-weight: 900;
-  font-style: italic;
-  font-size: 2.75rem;
-  border: 0.1rem solid #9356dc;
-  background-color: #ff79da;
-  color: #9356dc;
-}
-.form__field textarea {
-  width: 100%;
-  color: #9356dc;
-  background: #ff79da;
-  border: 0.1rem solid #9356dc;
-  outline: none;
-  padding: 0.5rem;
-  margin-bottom: 0.25rem;
+.footer__icon {
+  margin-right: 0.5rem;
 }
 
 .description {
@@ -122,17 +108,22 @@ button {
   margin-bottom: 2rem;
 }
 .description > button {
-  display: flex;
-  justify-content: center;
-  width: fit-content;
-  background-color: #9356dc;
-  border-radius: 3rem;
-  border-style: none;
+  border: none;
   padding: 1rem 2rem;
-}
-.description > button > span {
-  font-size: 1.2rem;
+  border-radius: 3rem;
   color: #fff;
+  font-size: 1.2rem;
+  background-image: linear-gradient(#9356dc 0%, #ff79da 100%);
+  cursor: pointer;
+  transition-duration: 0.25s;
+  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
+}
+.description > button:hover {
+  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.5);
+}
+.description > button a {
+  text-decoration: none;
+  color: inherit;
 }
 .description > h2 {
   font-size: 1.5rem;
@@ -152,6 +143,7 @@ button {
 }
 .features .step {
   display: flex;
+  cursor: pointer;
   justify-content: center;
   align-items: center;
   width: 90%;
@@ -160,8 +152,17 @@ button {
   border-radius: 3rem;
   border-style: none;
   background-color: #eaeaea;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.125);
 }
-.features .step__description {
+.features .step:hover {
+  background-color: #ffe3f7;
+}
+.features .step:hover > .step--description > i {
+  color: transparent;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: #9356dc;
+}
+.features .step--description {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -169,7 +170,7 @@ button {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
-.features .step__number {
+.features .step--number {
   position: relative;
   display: flex;
   justify-content: center;
@@ -192,7 +193,7 @@ button {
   font-size: 1.5rem;
 }
 
-.restaurants-cards {
+.restaurants__cards {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -200,24 +201,25 @@ button {
   row-gap: 1rem;
 }
 
-.restaurants-card {
-  max-width: 20rem;
+.restaurants__card {
+  max-width: 24rem;
+  max-height: 37rem;
   border-style: none;
   border-radius: 1rem;
   background-color: #fff;
 }
-.restaurants-card__image {
+.restaurants__cardImage {
   border-radius: inherit;
   object-fit: contain;
   position: relative;
 }
-.restaurants-card__image > img {
+.restaurants__cardImage > img {
   border-radius: inherit;
   display: block;
   object-fit: contain;
   width: 100%;
 }
-.restaurants-card__image > span {
+.restaurants__cardImage > span {
   position: absolute;
   display: block;
   top: 1rem;
@@ -229,20 +231,34 @@ button {
   color: #1b6150;
   font-size: 1rem;
 }
-.restaurants-card__footer {
+.restaurants__cardFooter {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
 }
-.restaurants-card__text > h3 {
+.restaurants__cardText > h3 {
   font-size: 1.3rem;
 }
-.restaurants-card__text > span {
+.restaurants__cardText > span {
   font-size: 1.2rem;
 }
-.restaurants-card__icon > .fas {
-  color: #9356dc;
+.restaurants__cardIcon > .far {
+  display: inline;
+}
+.restaurants__cardIcon > .fas {
+  display: none;
+}
+.restaurants__cardIcon:hover > .far {
+  display: none;
+}
+.restaurants__cardIcon:hover > .fas {
+  display: inline;
+  cursor: pointer;
+  transition-duration: 0.25s;
+  background: linear-gradient(#9356dc 0%, #ff79da 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /*# sourceMappingURL=style.css.map */
