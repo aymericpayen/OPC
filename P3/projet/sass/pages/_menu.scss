@@ -1,0 +1,120 @@
+.imageRestaurant {
+  object-fit: cover;
+  width: 100%;
+  object-fit: contain;
+}
+
+.menu {
+  position: relative;
+  // Percentage not working why ?
+  bottom: 3rem;
+  background-color: $light-grey;
+  border-radius: 20px;
+  padding: $padding-section;
+
+  &__header {
+    > h2 {
+      display: inline;
+    }
+
+    &Icon {
+      position: absolute;
+      left: $icon-left-relative-position;
+
+      > .far {
+        display: inline;
+      }
+
+      > .fas {
+        display: none;
+      }
+
+      &:hover > .far {
+        display: none;
+      }
+
+      &:hover > .fas {
+        display: inline;
+        // @include like;
+      }
+    }
+  }
+}
+
+.submenus {
+  > .submenu {
+    > h3 {
+      text-transform: uppercase;
+      font-weight: lighter;
+      border-bottom-style: solid;
+      border-width: 0.2rem;
+      width:fit-content;
+      border-color: $colour-tertiary;
+      padding-bottom: 0.3rem;
+
+
+      &::after {
+        content: "";
+        width: 3rem;
+        height: 0.25rem;
+        background-color: $colour-tertiary;
+        position: relative;
+        left: 1.4%;
+        bottom: 0%;
+      }
+    }
+    > span {
+      width: 3rem;
+      height: 0.25rem;
+      background-color: $colour-tertiary;
+      position: relative;
+      left: 1.4%;
+      bottom: 0%;
+    }
+  }
+}
+
+.menuItem {
+  position: relative;
+  transform: translateY(10px);
+  animation: itemAppear 2s;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+
+  &__header {
+    background-color: $colour-white;
+    border-radius: $border-radius-card;
+    padding: $padding-card-content;
+    margin: $margin-global;
+  }
+
+  &__price {
+    position: absolute;
+    top: 54%;
+    left: $icon-left-relative-position;
+  }
+
+  &__confirmation {
+    position: absolute;
+    top: 17%;
+    left: $icon-left-relative-position;
+    color: $colour-white;
+    background-color: $colour-tertiary;
+    padding: 0 rem $margin-global;
+    height: fit-content;
+  }
+}
+
+button {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // @include button;
+}
+
+@for $i from 0 to 9 {
+  .delay-#{$i} {
+    animation-delay: #{$i/10}s;
+  }
+}

@@ -1,25 +1,32 @@
 .header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 100%;
-  > h1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+  position: relative;
+  top:6px;
+
+  >h1 {
     font-size: $h1-font-size;
   }
 
-  &__localization {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    background-color: $dark-grey;
-    padding: $padding-localization;
-
-    i {
-      margin-right: $margin-global;
-    }
-    span {
-      font-size: $span-font-size;
-    }
-  }
+  >a  {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
 }
+}
+
+// .localisation {
+//     @extend %grid-center;
+//     @include grid-template-set ($localisation);
+//     padding: 1em;
+//     background: #eaeaea;
+//     background: linear-gradient(180deg,
+//             rgba(173, 173, 173, .35) 0%,
+//             rgba(234, 234, 234, .75) 15%,
+//             rgba(234, 234, 234, 1) 100%);
+
+//     & i {
+//         padding: 0 0.5em 0 0;
+//     }
+// }

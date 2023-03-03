@@ -1,3 +1,11 @@
+@keyframes itemAppear {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 *,
 *::after,
 *::before {
@@ -7,7 +15,7 @@
 }
 
 body {
-  max-width: 576px;
+  max-width: 100%;
 }
 
 body {
@@ -24,6 +32,26 @@ h1 {
   font-style: italic;
 }
 
+h2 {
+  font-family: "Shrikhand", sans-serif;
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+}
+
+h4 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.125rem;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.125rem;
+}
+
 textarea {
   font-family: "Roboto", sans-serif;
   font-weight: 100;
@@ -38,27 +66,19 @@ button {
 }
 
 .header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+  position: relative;
+  top: 6px;
 }
 .header > h1 {
   font-size: 2rem;
 }
-.header__localization {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  background-color: #b2b2b2;
-  padding: 1rem 0rem;
-}
-.header__localization i {
-  margin-right: 1rem;
-}
-.header__localization span {
-  font-size: 1.2rem;
+.header > a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
 }
 
 footer {
@@ -89,13 +109,29 @@ footer {
   margin-right: 0.5rem;
 }
 
+.localization {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: #b2b2b2;
+  background: linear-gradient(180deg, rgba(173, 173, 173, 0.35) 0%, rgba(234, 234, 234, 0.75) 15%, rgb(234, 234, 234) 100%);
+  padding: 1rem 0rem;
+}
+.localization i {
+  margin-right: 1rem;
+}
+.localization p {
+  font-size: 1.063rem;
+}
+
 .description {
   padding: 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background-color: #eaeaea;
+  background: linear-gradient(180deg, rgba(173, 173, 173, 0.35) 0%, rgba(234, 234, 234, 0.75) 15%, rgb(234, 234, 234) 100%);
   max-width: 100%;
   padding: 3rem 0rem;
 }
@@ -107,24 +143,6 @@ footer {
   font-size: 1.2rem;
   margin-bottom: 2rem;
 }
-.description > button {
-  border: none;
-  padding: 1rem 2rem;
-  border-radius: 3rem;
-  color: #fff;
-  font-size: 1.2rem;
-  background-image: linear-gradient(#9356dc 0%, #ff79da 100%);
-  cursor: pointer;
-  transition-duration: 0.25s;
-  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
-}
-.description > button:hover {
-  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.5);
-}
-.description > button a {
-  text-decoration: none;
-  color: inherit;
-}
 .description > h2 {
   font-size: 1.5rem;
 }
@@ -134,6 +152,7 @@ footer {
 }
 .features > h2 {
   font-size: 1.5rem;
+  font-weight: bold;
 }
 .features .steps {
   display: flex;
@@ -144,11 +163,10 @@ footer {
 .features .step {
   display: flex;
   cursor: pointer;
-  justify-content: center;
   align-items: center;
   width: 90%;
   margin: 1rem;
-  font-size: 1.3rem;
+  font-size: 1.063rem;
   border-radius: 3rem;
   border-style: none;
   background-color: #eaeaea;
@@ -164,11 +182,18 @@ footer {
 }
 .features .step--description {
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
   width: 100%;
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+.features .step--description > i {
+  position: relative;
+  left: 1rem;
+}
+.features .step--description > p {
+  position: relative;
+  left: 2rem;
 }
 .features .step--number {
   position: relative;
@@ -179,10 +204,13 @@ footer {
   width: 2rem;
   height: 2rem;
   border-radius: 2rem;
-  font-size: 1.3rem;
+  font-size: 1.063rem;
   right: 0.9rem;
   color: #fff;
   text-align: center;
+}
+.features .step--number > p {
+  font-weight: bold;
 }
 
 .restaurants {
@@ -191,6 +219,7 @@ footer {
 }
 .restaurants > h2 {
   font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .restaurants__cards {
@@ -200,48 +229,57 @@ footer {
   align-items: center;
   row-gap: 1rem;
 }
+.restaurants__cards > a {
+  text-decoration: none;
+  color: inherit;
+}
 
 .restaurants__card {
-  max-width: 24rem;
-  max-height: 37rem;
   border-style: none;
-  border-radius: 1rem;
+  border-radius: 15px;
   background-color: #fff;
+  width: 100%;
 }
 .restaurants__cardImage {
   border-radius: inherit;
-  object-fit: contain;
   position: relative;
 }
 .restaurants__cardImage > img {
-  border-radius: inherit;
-  display: block;
-  object-fit: contain;
+  height: 12.5em;
   width: 100%;
+  border-radius: 15px 15px 0px 0px;
+  display: block;
+  object-fit: cover;
 }
 .restaurants__cardImage > span {
   position: absolute;
   display: block;
-  top: 1rem;
-  right: 0.75rem;
+  top: 2%;
+  right: 2%;
   border-style: none;
-  border-radius: 10px;
+  border-radius: 2px;
   background: #99e2d0;
   padding: 0.2rem;
   color: #1b6150;
   font-size: 1rem;
+  font-weight: 400;
 }
 .restaurants__cardFooter {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem;
+  position: relative;
+  padding: 0.5rem 1rem;
 }
-.restaurants__cardText > h3 {
-  font-size: 1.3rem;
+.restaurants__cardFooter > h3 {
+  position: absolute;
+  font-size: 1.125rem;
 }
-.restaurants__cardText > span {
-  font-size: 1.2rem;
+.restaurants__cardFooter > p {
+  position: absolute;
+  font-size: 1.063rem;
+  top: 50%;
+}
+.restaurants__cardIcon {
+  position: relative;
+  left: 90%;
 }
 .restaurants__cardIcon > .far {
   display: inline;
@@ -254,6 +292,159 @@ footer {
 }
 .restaurants__cardIcon:hover > .fas {
   display: inline;
+}
+
+.imageRestaurant {
+  object-fit: cover;
+  width: 100%;
+  object-fit: contain;
+}
+
+.menu {
+  position: relative;
+  bottom: 3rem;
+  background-color: #eaeaea;
+  border-radius: 20px;
+  padding: 0.5rem;
+}
+.menu__header > h2 {
+  display: inline;
+}
+.menu__headerIcon {
+  position: absolute;
+  left: 90%;
+}
+.menu__headerIcon > .far {
+  display: inline;
+}
+.menu__headerIcon > .fas {
+  display: none;
+}
+.menu__headerIcon:hover > .far {
+  display: none;
+}
+.menu__headerIcon:hover > .fas {
+  display: inline;
+}
+
+.submenus > .submenu > h3 {
+  text-transform: uppercase;
+  font-weight: lighter;
+  border-bottom-style: solid;
+  border-width: 0.2rem;
+  width: fit-content;
+  border-color: #99e2d0;
+  padding-bottom: 0.3rem;
+}
+.submenus > .submenu > h3::after {
+  content: "";
+  width: 3rem;
+  height: 0.25rem;
+  background-color: #99e2d0;
+  position: relative;
+  left: 1.4%;
+  bottom: 0%;
+}
+.submenus > .submenu > span {
+  width: 3rem;
+  height: 0.25rem;
+  background-color: #99e2d0;
+  position: relative;
+  left: 1.4%;
+  bottom: 0%;
+}
+
+.menuItem {
+  position: relative;
+  transform: translateY(10px);
+  animation: itemAppear 2s;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+}
+.menuItem__header {
+  background-color: #fff;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  margin: 1rem;
+}
+.menuItem__price {
+  position: absolute;
+  top: 54%;
+  left: 90%;
+}
+.menuItem__confirmation {
+  position: absolute;
+  top: 17%;
+  left: 90%;
+  color: #fff;
+  background-color: #99e2d0;
+  padding: 0 rem 1rem;
+  height: fit-content;
+}
+
+button {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delay-0 {
+  animation-delay: 0s;
+}
+
+.delay-1 {
+  animation-delay: 0.1s;
+}
+
+.delay-2 {
+  animation-delay: 0.2s;
+}
+
+.delay-3 {
+  animation-delay: 0.3s;
+}
+
+.delay-4 {
+  animation-delay: 0.4s;
+}
+
+.delay-5 {
+  animation-delay: 0.5s;
+}
+
+.delay-6 {
+  animation-delay: 0.6s;
+}
+
+.delay-7 {
+  animation-delay: 0.7s;
+}
+
+.delay-8 {
+  animation-delay: 0.8s;
+}
+
+button {
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 3rem;
+  color: #fff;
+  font-size: 1.2rem;
+  background-image: linear-gradient(#9356dc 0%, #ff79da 100%);
+  cursor: pointer;
+  transition-duration: 0.25s;
+  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
+}
+button:hover {
+  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.5);
+}
+button a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.like {
   cursor: pointer;
   transition-duration: 0.25s;
   background: linear-gradient(#9356dc 0%, #ff79da 100%);

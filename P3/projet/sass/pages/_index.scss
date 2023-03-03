@@ -1,43 +1,75 @@
+.localization {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: $dark-grey;
+  background: linear-gradient(180deg,
+      rgba(173, 173, 173, .35) 0%,
+      rgba(234, 234, 234, .75) 15%,
+      rgba(234, 234, 234, 1) 100%);
+  padding: $padding-localization;
+
+  i {
+    margin-right: $margin-global;
+  }
+
+  p {
+    font-size: $p-font-size;
+  }
+}
+
 .description {
   padding: $padding-section;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background-color: $light-grey;
+  background: linear-gradient(180deg,
+      rgba(173, 173, 173, .35) 0%,
+      rgba(234, 234, 234, .75) 15%,
+      rgba(234, 234, 234, 1) 100%);
+  // background-color: $light-grey;
   max-width: 100%;
   padding: $padding-top-bottom-section;
-  > h1 {
+
+  >h1 {
     font-size: $h1-font-size;
     margin-bottom: $layout-margin;
   }
-  > span {
+
+  >span {
     font-size: $span-font-size;
     margin-bottom: $layout-margin;
   }
-  > button {
-    @include button;
+
+  >button {
+    // @include button;
   }
-  > h2 {
+
+  >h2 {
     font-size: $h2-font-size;
   }
 }
 
 .features {
   padding: $padding-section;
-  > h2 {
+
+  >h2 {
     font-size: $h2-font-size;
+    font-weight: bold;
   }
+
   .steps {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
+
   .step {
     display: flex;
     cursor: pointer;
-    justify-content: center;
     align-items: center;
     width: 90%;
     margin: $margin-global;
@@ -49,7 +81,8 @@
 
     &:hover {
       background-color: #ffe3f7;
-      & > .step--description > i {
+
+      &>.step--description>i {
         color: transparent;
         -webkit-text-stroke-width: 1.5px;
         -webkit-text-stroke-color: $colour-primary;
@@ -58,12 +91,20 @@
 
     &--description {
       display: flex;
-      justify-content: space-evenly;
       align-items: center;
       width: 100%;
       padding-top: $margin-global;
       padding-bottom: $margin-global;
+      > i {
+        position: relative;
+        left:1rem;
+      }
+      > p {
+        position: relative;
+        left:2rem;
+      }
     }
+
     &--number {
       position: relative;
       display: flex;
@@ -77,6 +118,10 @@
       right: 0.9rem;
       color: $colour-white;
       text-align: center;
+
+      >p {
+        font-weight: bold;
+      }
     }
   }
 }
@@ -84,8 +129,10 @@
 .restaurants {
   padding: $padding-section;
   background-color: $light-grey;
-  > h2 {
+
+  >h2 {
     font-size: $h2-font-size;
+    font-weight: bold;
   }
 }
 
@@ -95,67 +142,83 @@
   justify-content: center;
   align-items: center;
   row-gap: $margin-global;
+
+  >a {
+    text-decoration: none;
+    color: inherit;
+  }
 }
+
 .restaurants__card {
-  max-width: $max-width-restaurant-card;
-  max-height: $max-heigth-restaurant-card;
   border-style: none;
-  border-radius: $border-radius-card;
+  border-radius: 15px;
   background-color: $colour-white;
+  width: $max-width-card;
 
   &Image {
     border-radius: inherit;
-    object-fit: contain;
     position: relative;
-    > img {
-      border-radius: inherit;
+
+    >img {
+      height: $img-height;
+      width: $max-width-card;
+      border-radius: 15px 15px 0px 0px;
       display: block;
-      object-fit: contain;
-      width: 100%;
+      object-fit: cover;
     }
-    > span {
+
+    >span {
       position: absolute;
       display: block;
-      top: 1rem;
-      right: 0.75rem;
+      top: 2%;
+      right: 2%;
       border-style: none;
-      border-radius: 10px;
+      border-radius: 2px;
       background: $colour-tertiary;
       padding: 0.2rem;
       color: darken($colour-tertiary, 50%);
       font-size: 1rem;
+      font-weight: 400
     }
   }
+
   &Footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    position: relative;
     padding: $padding-card-content;
-  }
-  &Text {
-    > h3 {
+
+    >h3 {
+      position: absolute;
       font-size: $h3-font-size;
     }
-    > span {
-      font-size: $span-font-size;
+
+    >p {
+      position: absolute;
+      font-size: $p-font-size;
+      top: $p-top-absolute-position
     }
   }
 
+
   &Icon {
-    > .far {
+
+    position: relative;
+    left: $icon-left-relative-position;
+
+    >.far {
       display: inline;
     }
 
-    > .fas {
+    >.fas {
       display: none;
     }
 
-    &:hover > .far {
+    &:hover>.far {
       display: none;
     }
-    &:hover > .fas {
+
+    &:hover>.fas {
       display: inline;
-      @include like;
+      // @include like;
     }
   }
 }
