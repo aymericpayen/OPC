@@ -4,36 +4,47 @@
   object-fit: contain;
 }
 
+.container {
+  &__menu {
+    background-color: $light-grey;
+  }
+}
+
 .menu {
   position: relative;
-  // Percentage not working why ?
   bottom: 3rem;
   background-color: $light-grey;
-  border-radius: 20px;
-  padding: $padding-section;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  z-index: 1;
 
   &__header {
-    > h2 {
+    margin: auto;
+    display: flex;
+    max-width: 320px;
+    justify-content: space-between;
+
+    >h2 {
       display: inline;
     }
 
     &Icon {
-      position: absolute;
-      left: $icon-left-relative-position;
+      // position: absolute;
+      // left: $icon-left-relative-position;
 
-      > .far {
+      >.far {
         display: inline;
       }
 
-      > .fas {
+      >.fas {
         display: none;
       }
 
-      &:hover > .far {
+      &:hover>.far {
         display: none;
       }
 
-      &:hover > .fas {
+      &:hover>.fas {
         display: inline;
         // @include like;
       }
@@ -42,13 +53,21 @@
 }
 
 .submenus {
-  > .submenu {
-    > h3 {
+  padding: $padding-section;
+
+  >.submenu {
+
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 1.5rem;
+    margin: 1rem 0 2.5rem;
+
+    >h3 {
       text-transform: uppercase;
       font-weight: lighter;
       border-bottom-style: solid;
       border-width: 0.2rem;
-      width:fit-content;
+      width: fit-content;
       border-color: $colour-tertiary;
       padding-bottom: 0.3rem;
 
@@ -63,7 +82,8 @@
         bottom: 0%;
       }
     }
-    > span {
+
+    >span {
       width: 3rem;
       height: 0.25rem;
       background-color: $colour-tertiary;
@@ -72,36 +92,98 @@
       bottom: 0%;
     }
   }
-}
 
-.menuItem {
-  position: relative;
-  transform: translateY(10px);
-  animation: itemAppear 2s;
-  animation-timing-function: ease;
-  animation-fill-mode: both;
-
-  &__header {
+  & .menuItem {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    font-size: 1rem;
     background-color: $colour-white;
-    border-radius: $border-radius-card;
-    padding: $padding-card-content;
-    margin: $margin-global;
+    padding: 1rem;
+    text-align: left;
+    border-radius: 1rem;
+    box-shadow: 0 4px 11px rgba(0, 0, 0, 0.2);
+    animation: itemAppear 2s;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+    opacity: 0;
+
+    & delay {
+      @for $i from 1 to 9 {
+        &--#{$i} {
+          opacity: 1;
+          animation-delay: 1000ms * $i;
+        }
+      }
+    }
+
+    & h4 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.1rem;
+      @extend %elipstext;
+      width: 90%;
+    }
+
+    & p {
+      @extend %elipstext;
+    }
+
+    & strong {
+      position: absolute;
+      right: 2rem;
+      bottom: 1rem;
+      transition: all 0.5s;
+    }
+
+
+
+    & span {
+      position: absolute;
+      top: 0;
+      right: -5rem;
+      width: 5rem;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: $colour-tertiary;
+      color: $colour-white;
+
+      & i {
+        font-size: 1.5rem;
+        transform: rotate(-240deg);
+        transition: all 0.5s;
+      }
+    }
   }
 
-  &__price {
-    position: absolute;
-    top: 54%;
-    left: $icon-left-relative-position;
+
+  & .menuItem:hover {
+    & h4 {
+      width: 70%;
+    }
+
+    & p {
+      width: 55%;
+    }
+
+    & strong {
+      right: 6.5rem;
+    }
+
+    & span {
+      right: 0;
+
+      & i {
+        transform: rotate(0deg);
+      }
+    }
   }
 
-  &__confirmation {
-    position: absolute;
-    top: 17%;
-    left: $icon-left-relative-position;
-    color: $colour-white;
-    background-color: $colour-tertiary;
-    padding: 0 rem $margin-global;
-    height: fit-content;
+  @for $i from 0 to 10 {
+    .delay--#{$i} {
+      animation-delay: #{$i/10}s;
+    }
   }
 }
 
@@ -110,11 +192,13 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  // @include button;
 }
 
-@for $i from 0 to 9 {
-  .delay-#{$i} {
-    animation-delay: #{$i/10}s;
+@media screen and (min-width: 996px) {
+  .menu {
+    max-width: 1055px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
   }
 }

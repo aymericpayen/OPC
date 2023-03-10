@@ -29,7 +29,6 @@
       rgba(173, 173, 173, .35) 0%,
       rgba(234, 234, 234, .75) 15%,
       rgba(234, 234, 234, 1) 100%);
-  // background-color: $light-grey;
   max-width: 100%;
   padding: $padding-top-bottom-section;
 
@@ -41,10 +40,7 @@
   >span {
     font-size: $span-font-size;
     margin-bottom: $layout-margin;
-  }
-
-  >button {
-    // @include button;
+    padding: 0rem 1rem;
   }
 
   >h2 {
@@ -95,13 +91,15 @@
       width: 100%;
       padding-top: $margin-global;
       padding-bottom: $margin-global;
-      > i {
+
+      >i {
         position: relative;
-        left:1rem;
+        left: 1rem;
       }
-      > p {
+
+      >p {
         position: relative;
-        left:2rem;
+        left: 2rem;
       }
     }
 
@@ -127,7 +125,7 @@
 }
 
 .restaurants {
-  padding: $padding-section;
+  padding: 2rem 1rem;
   background-color: $light-grey;
 
   >h2 {
@@ -142,18 +140,18 @@
   justify-content: center;
   align-items: center;
   row-gap: $margin-global;
-
-  >a {
-    text-decoration: none;
-    color: inherit;
-  }
 }
 
 .restaurants__card {
   border-style: none;
   border-radius: 15px;
   background-color: $colour-white;
-  width: $max-width-card;
+  width: 100%;
+
+  >a {
+    text-decoration: none;
+    color: inherit;
+  }
 
   &Image {
     border-radius: inherit;
@@ -161,7 +159,7 @@
 
     >img {
       height: $img-height;
-      width: $max-width-card;
+      width: 100%;
       border-radius: 15px 15px 0px 0px;
       display: block;
       object-fit: cover;
@@ -221,4 +219,70 @@
       // @include like;
     }
   }
+}
+
+.loader {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.90);
+  animation: loader 0.01s;
+  animation-delay: 1.75s;
+  animation-fill-mode: both;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__item {
+    height: 1rem;
+    width: 1rem;
+    border-radius: 1rem;
+    animation: jump 1s;
+    animation-iteration-count: 1;
+
+    &Container {
+      display: flex;
+      width: 5rem;
+      justify-content: space-between;
+    }
+
+    &--1 {
+      background-color: $colour-primary;
+    }
+
+    &--2 {
+      background-color: $colour-secondary;
+      animation-delay: 0.25s;
+    }
+
+    &--3 {
+      background-color: $colour-tertiary;
+      animation-delay: 0.5s;
+    }
+  }
+}
+
+@media screen and (min-width: 996px) {
+  .features {
+    .steps {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  .restaurants {
+    .restaurants__cards {
+      flex-direction: row;
+
+      .restaurants__card {
+        margin: 0rem 1rem;
+      }
+    }
+  }
+
 }
